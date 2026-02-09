@@ -1,52 +1,32 @@
-.energy-logo {
+.logo-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 200px; /* tu peux ajuster */
-}
-/* Cercle qui respire */
-.energy-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  /* Dégradé multi-émotions */
-  background: conic-gradient(
-    from 0deg,
-    #4f46e5,  /* violet - introspection */
-    #0ea5e9,  /* bleu - calme */
-    #22c55e,  /* vert - équilibre */
-    #eab308,  /* jaune - joie */
-    #f97316,  /* orange - énergie */
-    #ef4444,  /* rouge - tension */
-    #4f46e5   /* retour violet */
-  );
-  /* Effet "halo" */
-  box-shadow: 0 0 25px rgba(34, 197, 94, 0.4);
-  animation: breathe 3s ease-in-out infinite, rotate 18s linear infinite;
+  gap: 12px;
+  margin-top: 20px;
+  justify-content: center; /* tu peux changer en left si tu veux */
 }
 
-/* Animation respiration */
-@keyframes breathe {
+.wave-logo {
+  width: 60px;
+  height: 20px;
+  stroke: #0ea5e9; /* bleu calme */
+  stroke-width: 6;
+  fill: none;
+  animation: waveMove 3s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes waveMove {
   0% {
-    transform: scale(0.9);
-    box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
+    transform: translateY(8px);
+    opacity: 0;
   }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px rgba(34, 197, 94, 0.6);
+  40% {
+    transform: translateY(0px);
+    opacity: 1;
   }
   100% {
-    transform: scale(0.9);
-    box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
-  }
-}
-
-/* Rotation très lente du dégradé (flow) */
-@keyframes rotate {
-  from {
-    transform: rotate(0deg) scale(1);
-  }
-  to {
-    transform: rotate(360deg) scale(1);
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
