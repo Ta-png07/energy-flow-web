@@ -9,12 +9,32 @@
 
 <body>
 
-  <div class="logo-container">
-    <svg class="wave-logo" viewBox="0 0 200 60">
-      <path d="M10 30 Q 60 5, 110 30 T 190 30" />
-    </svg>
-    <h1>Energy Flow – Prototype</h1>
-  </div>
+<div class="logo-container">
+  <svg class="wave-logo" viewBox="0 0 200 60">
+    <defs>
+      <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#4f46e5" />
+        <stop offset="20%" stop-color="#0ea5e9" />
+        <stop offset="45%" stop-color="#22c55e" />
+        <stop offset="70%" stop-color="#eab308" />
+        <stop offset="100%" stop-color="#f97316" />
+      </linearGradient>
+
+      <filter id="soften">
+        <feGaussianBlur stdDeviation="1.8" />
+      </filter>
+    </defs>
+
+    <path d="M5 30 Q 50 5, 100 30 T 195 30"
+          stroke="url(#waveGradient)"
+          stroke-width="10"
+          stroke-linecap="round"
+          fill="none"
+          filter="url(#soften)" />
+  </svg>
+
+  <h1>Energy Flow – Prototype</h1>
+</div>
 
   <script src="script.js"></script>
 
